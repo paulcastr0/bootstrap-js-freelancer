@@ -52,7 +52,7 @@ function clickFormButton(event){
        discount == "PWKCN25" || 
        discount == "SJDPO96" || 
        discount == "POCIE24") {
-       salary = salary * 0,75;
+       salary = salary * 0.75;
     }else if (discount !== ""){
        alert("Il codice sconto inserito non è valido")
     }
