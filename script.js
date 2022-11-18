@@ -37,20 +37,29 @@ function clickFormButton(event){
     //Estraggo i valori dall'HTML
     let typeOfWork = document.getElementById("inputTypeofWork").value;
     let hours = document.getElementById("inputHours").value;
-    
+    let discount = document.getElementById("inputDiscount").value;
+    let salary = 0;
+  
     for (i = 0; i < work.length; i++){
-        if(typeOfWork == work[i].job) {
-          console.log("The Salary Is: " + work[i].salary * hours)
-        }
-      }
-    
-    
+      if(typeOfWork == work[i].job) {
+          salary = work[i].salary * hours;
           
-console.log("")
-
+      }
+    }
+    
+    if(discount == "YHDNU32" || 
+       discount == "JANJC63" || 
+       discount == "PWKCN25" || 
+       discount == "SJDPO96" || 
+       discount == "POCIE24") {
+       salary = salary * 0,75;
+    }else if (discount !== ""){
+       alert("Il codice sconto inserito non è valido")
+    }
+  
+document.getElementById("output1").innerHTML = `<h3 class ="output" id = "output1">The Final Price is : ${salary}</h3>`
 
 } 
-
 
 
 //button.addEventListener("click",result);
